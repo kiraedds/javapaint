@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="open" mnemonicParsing="false" onAction="#openFile" text="Open" />
+                        <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                        <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeFile" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="rotate" mnemonicParsing="false" onAction="#rotateFunction" text="Rotate" />
+                        <MenuItem fx:id="crop" mnemonicParsing="false" onAction="#cropFunction" text="Crop" />
+                        <MenuItem fx:id="scale" mnemonicParsing="false" onAction="#scaleFunction" text="Scale" />
+                        <MenuItem fx:id="newLayer" mnemonicParsing="false" onAction="#moveToNewLayer" text="Move to new layer" />
+                        <MenuItem fx:id="perspective" mnemonicParsing="false" onAction="#perspectiveFunction" text="Perspective" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Draw">
+                  <items>
+                        <MenuItem fx:id="freeDraw" mnemonicParsing="false" onAction="#freeDrawFunction" text="Freedraw" />
+                    <MenuItem fx:id="rubber" mnemonicParsing="false" onAction="#rubberFunction" text="Rubber" />
+                        <MenuItem fx:id="drawFigure" mnemonicParsing="false" onAction="#drawFigureFunction" text="Draw Figure" />
+                        <MenuItem fx:id="text" mnemonicParsing="false" onAction="#addText" text="Add text" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Filter">
+                    <items>
+                      <MenuItem fx:id="colorIntensity" mnemonicParsing="false" onAction="#setColorIntensity" text="Set color intensity" />
+                        <MenuItem fx:id="transparency" mnemonicParsing="false" onAction="#setTransparency" text="Set transparency" />
+                        <MenuItem fx:id="sepia" mnemonicParsing="false" onAction="#sepiaFunction" text="Sepia" />
+                        <MenuItem fx:id="blackWhite" mnemonicParsing="false" onAction="#setBlackWhite" text="Black and white" />
+                    </items>
+                  </Menu>
+              </menus>
+               <padding>
+                  <Insets left="1.0" top="1.0" />
+               </padding>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane>
+               <children>
+                  <Canvas fx:id="canvas" height="263.0" width="411.0" />
+                  <ImageView fx:id="background" fitHeight="383.0" fitWidth="600.0" layoutX="14.0" layoutY="5.0" nodeOrientation="INHERIT" onMouseClicked="#showContextMenu" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.600000000000023" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.5" AnchorPane.topAnchor="5.0">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="53.0" prefWidth="702.0" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="15.0" prefHeight="22.0" prefWidth="86.0" text="Give a value" textAlignment="CENTER" />
+                  <TextField fx:id="value" alignment="CENTER" layoutX="314.0" layoutY="14.0" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
